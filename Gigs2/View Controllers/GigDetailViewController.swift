@@ -13,6 +13,9 @@ class GigDetailViewController: UIViewController {
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var descriptionTextField: UITextView!
     
+    var gigController: GigController?
+    var gig: Gig?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
