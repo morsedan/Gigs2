@@ -18,11 +18,29 @@ class GigDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews(with: gig)
+    }
+    
+    func updateViews(with gig: Gig?) {
+        guard let gig = gig else { return }
+        titleTextField.text = gig.title
+        descriptionTextField.text = gig.description
+        datePicker.date = gig.dueDate
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let title = titleTextField.text, let description = descriptionTextField.text else { return }
+        let date = datePicker.date
+        
+        gigController?.createGig(title: title, description: description, dueDate: date, completion: { error in
+            if let error = error {
+                print("Error saving gig: \(error)")
+            }
+        })
+        
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
 
