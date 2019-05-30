@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		C025015E22A050EA00D1897A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025015D22A050EA00D1897A /* AppDelegate.swift */; };
-		C025016022A050EA00D1897A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025015F22A050EA00D1897A /* ViewController.swift */; };
 		C025016322A050EA00D1897A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C025016122A050EA00D1897A /* Main.storyboard */; };
 		C025016522A050EB00D1897A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C025016422A050EB00D1897A /* Assets.xcassets */; };
 		C025016822A050EB00D1897A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C025016622A050EB00D1897A /* LaunchScreen.storyboard */; };
+		C025017522A0524B00D1897A /* GigsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025017422A0524B00D1897A /* GigsTableViewController.swift */; };
+		C025017722A0533D00D1897A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025017622A0533D00D1897A /* LoginViewController.swift */; };
+		C025017922A056E400D1897A /* GigDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025017822A056E400D1897A /* GigDetailViewController.swift */; };
+		C025017B22A0578700D1897A /* Gig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025017A22A0578700D1897A /* Gig.swift */; };
+		C025017D22A057E800D1897A /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025017C22A057E800D1897A /* Bearer.swift */; };
+		C025017F22A0581500D1897A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025017E22A0581500D1897A /* User.swift */; };
+		C025018122A0585D00D1897A /* GigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025018022A0585D00D1897A /* GigController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C025015A22A050EA00D1897A /* Gigs2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gigs2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C025015D22A050EA00D1897A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C025015F22A050EA00D1897A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C025016222A050EA00D1897A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C025016422A050EB00D1897A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C025016722A050EB00D1897A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C025016922A050EB00D1897A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C025017422A0524B00D1897A /* GigsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigsTableViewController.swift; sourceTree = "<group>"; };
+		C025017622A0533D00D1897A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C025017822A056E400D1897A /* GigDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigDetailViewController.swift; sourceTree = "<group>"; };
+		C025017A22A0578700D1897A /* Gig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gig.swift; sourceTree = "<group>"; };
+		C025017C22A057E800D1897A /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		C025017E22A0581500D1897A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C025018022A0585D00D1897A /* GigController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +66,52 @@
 		C025015C22A050EA00D1897A /* Gigs2 */ = {
 			isa = PBXGroup;
 			children = (
+				C025017222A0513500D1897A /* View Controllers */,
+				C025017122A0512700D1897A /* Model Controllers */,
+				C025016F22A0511400D1897A /* Models */,
+				C025017322A0513F00D1897A /* Resources */,
+			);
+			path = Gigs2;
+			sourceTree = "<group>";
+		};
+		C025016F22A0511400D1897A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C025017A22A0578700D1897A /* Gig.swift */,
+				C025017C22A057E800D1897A /* Bearer.swift */,
+				C025017E22A0581500D1897A /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C025017122A0512700D1897A /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C025018022A0585D00D1897A /* GigController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		C025017222A0513500D1897A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C025017422A0524B00D1897A /* GigsTableViewController.swift */,
+				C025017822A056E400D1897A /* GigDetailViewController.swift */,
+				C025017622A0533D00D1897A /* LoginViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C025017322A0513F00D1897A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				C025015D22A050EA00D1897A /* AppDelegate.swift */,
-				C025015F22A050EA00D1897A /* ViewController.swift */,
 				C025016122A050EA00D1897A /* Main.storyboard */,
 				C025016422A050EB00D1897A /* Assets.xcassets */,
 				C025016622A050EB00D1897A /* LaunchScreen.storyboard */,
 				C025016922A050EB00D1897A /* Info.plist */,
 			);
-			path = Gigs2;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C025016022A050EA00D1897A /* ViewController.swift in Sources */,
+				C025017722A0533D00D1897A /* LoginViewController.swift in Sources */,
+				C025018122A0585D00D1897A /* GigController.swift in Sources */,
+				C025017922A056E400D1897A /* GigDetailViewController.swift in Sources */,
+				C025017D22A057E800D1897A /* Bearer.swift in Sources */,
 				C025015E22A050EA00D1897A /* AppDelegate.swift in Sources */,
+				C025017522A0524B00D1897A /* GigsTableViewController.swift in Sources */,
+				C025017B22A0578700D1897A /* Gig.swift in Sources */,
+				C025017F22A0581500D1897A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8M5GPJQ6L5;
-				INFOPLIST_FILE = Gigs2/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Gigs2/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +358,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8M5GPJQ6L5;
-				INFOPLIST_FILE = Gigs2/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Gigs2/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
