@@ -24,7 +24,7 @@ enum NetworkError: Error {
 class GigController {
     private let baseURL = URL(string: "https://lambdagigs.vapor.cloud/api")!
     var bearer: Bearer?
-    var Gigs: [Gig] = []
+    var gigs: [Gig] = []
     
     func signUp(with user: User, completion: @escaping (Error?) -> ()) {
         let signUpURL = baseURL.appendingPathComponent("users/signup")
@@ -109,7 +109,47 @@ class GigController {
         
     }
     
-    func fetchGigs() {
+    func fetchGigs(completion: @escaping (Result<[Gig], NetworkError>) -> ()) {
+        guard let bearer = bearer else {
+            completion(.failure(.noAuth))
+            return
+        }
+        
+        let gigsURL = baseURL.appendingPathComponent("gigs")
+        
+        var request = URLRequest(url: gigsURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.addValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 401 {
+                completion(.failure(.badAuth))
+                return
+            }
+            
+            if let _ = error {
+                completion(.failure(.otherError))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.badData))
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                let gigs = try decoder.decode([Gig].self, from: data)
+                completion(.success(gigs))
+                self.gigs = gigs
+            } catch {
+                print("Error decoding animal objects: \(error)")
+                completion(.failure(.noDecode))
+                return
+            }
+        }.resume()
+        
         
     }
     
